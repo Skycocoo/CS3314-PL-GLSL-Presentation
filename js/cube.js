@@ -127,7 +127,7 @@ var Cube = {
         // mat4.rotate(this.modelMatrix, this.modelMatrix, this.elapsed * 0.7, [0, 1, 0]);
 
         // view matrix
-        var distance = 30;
+        var distance = 1;
         mat4.translate(this.viewMatrix, this.viewMatrix, [0, 0, distance]);
         // mat4.translate(this.viewMatrix, this.viewMatrix, [(-distance * Math.sin(this.elapsed)), 0, (distance * Math.cos(this.elapsed))]);
         var eye = [this.viewMatrix[12], this.viewMatrix[13], this.viewMatrix[14]],
@@ -146,14 +146,6 @@ var Cube = {
     render: function(shaderProgram) {
         gl.useProgram(shaderProgram.programID);
 
-        // position
-        // gl.vertexAttribPointer(
-        //     programInfo.attribLocations.vertexPosition,
-        //     numComponents,
-        //     type,
-        //     normalize,
-        //     stride,
-        //     offset);
         gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer.position);
         gl.vertexAttribPointer(shaderProgram.attribLocations.vertexPosition, 3, gl.FLOAT, false, 0, 0);
         gl.enableVertexAttribArray(shaderProgram.attribLocations.vertexPosition);
@@ -163,19 +155,12 @@ var Cube = {
         gl.vertexAttribPointer(shaderProgram.attribLocations.vertexColor, 4, gl.FLOAT, false, 0, 0);
         gl.enableVertexAttribArray(shaderProgram.attribLocations.vertexColor);
 
-        // normal
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer.normal);
-        gl.vertexAttribPointer(shaderProgram.attribLocations.vertexNormal, 3, gl.FLOAT, false, 0, 0);
-        gl.enableVertexAttribArray(shaderProgram.attribLocations.vertexNormal);
-
         // indices
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.buffer.indices);
 
         // matrices
         gl.uniformMatrix4fv(shaderProgram.uniformLocations.projectionMatrix, false, this.projectionMatrix);
         gl.uniformMatrix4fv(shaderProgram.uniformLocations.modelViewMatrix, false, this.modelViewMatrix);
-        gl.uniformMatrix4fv(shaderProgram.uniformLocations.normalMatrix, false, this.normalMatrix);
-
 
         // gl.drawElements(gl.TRIANGLES, vertexCount, type, offset);
         gl.drawElements(gl.TRIANGLES, 36, gl.UNSIGNED_SHORT, 0);
