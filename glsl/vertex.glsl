@@ -1,4 +1,4 @@
-// Created by Yuxi Luo
+// Created by Yuxi Luo; June 2018
 
 attribute vec4 aVertexPosition;
 attribute vec4 aVertexColor;

@@ -1,4 +1,4 @@
-// Created by Yuxi Luo
+// Created by Yuxi Luo; June 2018
 
 varying lowp vec4 vColor;
 
