@@ -5,7 +5,7 @@
 
 const canvas = document.querySelector("canvas"),
       gl = document.querySelector("canvas").getContext("webgl")
-      clientPath = "http://localhost:63342/GLSL-Presentation/";
+      clientPath = "https://skycocoo.github.io/CS3314-PL-GLSL-Presentation/";
 
 // gl
 function initGl() {
