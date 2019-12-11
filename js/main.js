@@ -1,4 +1,4 @@
-// Created by Yuxi Luo; June 2018
+// Created by Yuxi Luo; Dec 2019
 
 var shaderProgram = new ShaderProgram("glsl/vertex.glsl", "glsl/fragment.glsl");
 

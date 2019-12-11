@@ -1,7 +1,4 @@
-// Created by Yuxi Luo; June 2018
-
-// client-side testing:
-// http://localhost:63342/Hikari-no-tama/
+// Created by Yuxi Luo; Dec 2019
 
 const canvas = document.querySelector("canvas"),
       gl = document.querySelector("canvas").getContext("webgl")

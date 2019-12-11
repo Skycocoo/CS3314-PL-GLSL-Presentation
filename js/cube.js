@@ -1,4 +1,4 @@
-// Created by Yuxi Luo; June 2018
+// Created by Yuxi Luo; Dec 2019
 /*jshint esversion: 6 */
 
 var Cube = {
